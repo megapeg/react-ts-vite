@@ -1,0 +1,41 @@
+{
+  // Display name for the development container
+  "name": "Simple React/Typescript Template App",
+
+  // Build configuration specifying which Dockerfile to use
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  // Command to run after the container is created to install dependencies
+  "updateContentCommand": "npm install",
+
+  // Command to run after attaching to the container (starts the React app). Runs after "updateContentCommand"
+  "postAttachCommand": "npm run dev",
+
+  // User to run commands as inside the container rather than the default root user
+  "remoteUser": "node",
+
+  // Ports to automatically forward from the container to the host
+  "forwardPorts": [5100],
+
+  // Configuration for how forwarded ports should behave
+  // more info at containers.dev/containers/features/forwardedPorts
+  "portsAttributes": {
+    "5100": {
+      // Human-readable label for port 5100
+      "label": "React Template App",
+      // Automatically open preview when port is forwarded
+      "onAutoForward": "openPreview"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode"],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}
