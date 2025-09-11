@@ -4,7 +4,11 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Prettier support is also added for onsave in VSC
 
-# Install template
+## Install Precommit Hooks
+
+npm install && npx husky init && echo npx lint-staged > .husky/pre-commit
+
+# Install template dependencies
 
 > npm install
 > npm run dev
