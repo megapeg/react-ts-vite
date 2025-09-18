@@ -1,8 +1,10 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with HMR. Additional support :
 
-Prettier support is also added for onsave in VSC
+- Eslint on precommit hook
+- Prettier support is also added for onsave in VSC
+- Vitest and React Test Library for testing
 
 ## Install Precommit Hooks
 
