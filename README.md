@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Tailwind+shadcn
 
 This template provides a minimal setup to get React working in Vite with HMR. Additional support :
 
@@ -14,6 +14,12 @@ npm install && npx husky init && echo npx lint-staged > .husky/pre-commit
 
 > npm install
 > npm run dev
+
+# Configure Tailwindcss + Shadcn
+
+- [Tailwind CSS](https://tailwindcss.com/docs/guides/vite)
+- [shadcn/ui](https://ui.shadcn.com/docs/installation/vite) follow the steps outlined here.
+  -> npm install --save-dev prettier-plugin-tailwindcss@^0.6.14
 
 Currently, two official plugins are available:
 
