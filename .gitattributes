@@ -1,0 +1,24 @@
+# Set the default for all text files to be normalized to LF inside the repo
+* text=auto eol=lf
+
+# Ensure Husky Git hooks are always LF
+.husky/* text eol=lf
+
+# Enforce LF (Linux/Mac) for key configuration/script files
+*.json text eol=lf
+*.sh text eol=lf
+*.bash text eol=lf
+*.yml text eol=lf
+
+# Explicitly mark any known binary files so Git doesn't touch them
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.exe binary
+
+
