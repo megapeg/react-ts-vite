@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --debug",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext ts,js,jsx,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -49,8 +49,11 @@
     "@tailwindcss/vite": "^4.1.13"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{ts,tsx,js,jsx}": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,scss,html}": [
       "prettier --write"
     ]
   }
