@@ -2,7 +2,7 @@
 /// <reference types="@testing-library/jest-dom" />
 
 interface ImportMetaEnv {
-  readonly VITE_APP_TITLE: string;
+  readonly VITE_APP_NAME: string;
   // more env variables...
 }
 
