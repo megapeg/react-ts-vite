@@ -13,7 +13,7 @@ try {
 }
 
 export default [
-  { ignores: ['dist', ...localConfig.localIgnores] },
+  { ignores: ['dist', 'coverage', ...localConfig.localIgnores] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -28,7 +28,10 @@ export default [
     },
     rules: {
       ...reactHooks.configs['recommended-latest'].rules,
-      ...reactRefresh.configs.vite.rules,
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
       ...localConfig.localRules,
     },
   },
