@@ -17,17 +17,6 @@ export default defineConfig({
   },
   build: {
     outDir: './dist',
-    // 💡 FIX: Use rollupOptions to explicitly exclude test files from the build
-    rollupOptions: {
-      external: [
-        // Exclude test files using glob patterns
-        '**/*.test.ts',
-        '**/*.test.tsx',
-        '**/*.test.js',
-        '**/*.test.jsx',
-        '**/test/**', // Exclude files within a dedicated 'test' folder inside src
-      ],
-    },
   },
   test: {
     globals: true,
