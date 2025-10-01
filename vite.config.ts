@@ -5,7 +5,6 @@ import { resolve } from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-  define: { 'process.env': {} },
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
