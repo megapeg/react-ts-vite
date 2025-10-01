@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-linting-test
+src/linting-test
 
 # Editor directories and files
 !.vscode/extensions.json
