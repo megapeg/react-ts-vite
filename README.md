@@ -26,6 +26,28 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Local ESLint Configuration
+
+For personal ESLint overrides that shouldn't be committed to the repository, create an optional `eslint.config.local.js` file:
+
+```js
+// eslint.config.local.js - not checked into git
+export const localIgnores = ['my-temp-folder/', 'experimental/**'];
+
+export const localRules = {
+  'no-console': 'off',
+  '@typescript-eslint/no-unused-vars': 'warn',
+};
+```
+
+This file is automatically imported by the main ESLint config and allows you to:
+
+- Add personal ignore patterns without affecting the team
+- Override specific rules for your development workflow
+- Keep experimental or temporary configurations local
+
+The file is optional - ESLint will work normally if it doesn't exist.
+
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
