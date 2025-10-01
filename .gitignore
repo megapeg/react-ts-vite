@@ -10,8 +10,9 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-*.local
-eslint.config.local.js
+
+# Test coverage
+coverage
 
 # Editor directories and files
 !.vscode/extensions.json
@@ -22,3 +23,7 @@ eslint.config.local.js
 *.njsproj
 *.sln
 *.sw?
+
+# misc
+*.local
+eslint.config.local.js
