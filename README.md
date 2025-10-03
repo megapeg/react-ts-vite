@@ -90,6 +90,15 @@ interface ImportMetaEnv {
 }
 ```
 
+Env vars are loaded by Vite in the following order
+
+[mode] = test / development
+
+1. **`.env.[mode].local`** - Highest Priority. Development mode only. Never committed, used for secrets.
+2. **`.env.[mode]`** - Development or Test mode (can be committed, common team or mock settings)
+3. **`.env.local`** - Always loaded useful for local secrets, never commit.
+4. **`.env`** - Base settings, lowest priority and always loaded. Can be committed.
+
 ## Available Scripts
 
 - `npm run dev` - Start development server with debug output
