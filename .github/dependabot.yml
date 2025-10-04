@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 10
+    reviewers:
+      - '@megapeg'
+    assignees:
+      - '@megapeg'
+    commit-message:
+      prefix: 'deps'
+    groups:
+      react:
+        patterns:
+          - 'react*'
+          - '@types/react*'
+      testing:
+        patterns:
+          - '*test*'
+          - 'vitest'
+          - '@testing-library/*'
