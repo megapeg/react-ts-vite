@@ -1,0 +1,80 @@
+# Dependabot configuration for enhanced security
+# This configuration prioritizes security updates for both direct and indirect dependencies
+
+version: 2
+updates:
+  # Configuration for npm dependencies (package.json)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "06:00"
+      timezone: "UTC"
+    
+    # Security-focused configuration
+    open-pull-requests-limit: 10
+    
+    # Prioritize security updates
+    allow:
+      - dependency-type: "all"
+    
+    # Security update configuration
+    # Dependabot will automatically create PRs for security vulnerabilities
+    # regardless of the schedule when security advisories are published
+    
+    # Commit message configuration for security tracking
+    commit-message:
+      prefix: "security"
+      prefix-development: "security-dev"
+      include: "scope"
+    
+    # Labels for easy identification of security updates
+    labels:
+      - "security"
+      - "dependencies"
+      - "automated"
+    
+    # Reviewers configuration (uncomment and modify as needed)
+    # reviewers:
+    #   - "security-team"
+    # assignees:
+    #   - "security-lead"
+    
+    # Milestone configuration (uncomment if using milestones)
+    # milestone: "Security Updates"
+    
+    # Rebase strategy for security updates
+    rebase-strategy: "auto"
+    
+    # Target branch (defaults to default branch)
+    target-branch: null
+    
+    # Vendor dependencies (if any)
+    vendor: false
+    
+    # Versioning strategy - prioritize security patches
+    versioning-strategy: "increase"
+
+  # Additional configuration for GitHub Actions (if workflows are added later)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "UTC"
+    
+    open-pull-requests-limit: 5
+    
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    
+    labels:
+      - "github-actions"
+      - "dependencies"
+      - "automated"
+    
+    # Security updates for GitHub Actions
+    allow:
+      - dependency-type: "all"
