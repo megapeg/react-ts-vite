@@ -64,14 +64,27 @@ The file is optional - ESLint will work normally if it doesn't exist.
 - **jsdom** - DOM environment for testing
 - **@testing-library/jest-dom** - Custom Jest matchers
 
-### CI/CD
+### CI/CD & Security
 
 - **GitHub Actions** - Automated CI pipeline with:
   - Dependency installation
+  - Security audit checks
   - Code linting
   - Build verification
   - Test execution
   - PR failure notifications
+
+- **Dependabot** - Automated security and dependency management:
+  - Daily security vulnerability scanning
+  - Automatic pull requests for security updates
+  - Prioritized security patches for direct and indirect dependencies
+  - GitHub Actions workflow updates
+
+- **Security Workflows** - Comprehensive security monitoring:
+  - Daily automated security audits
+  - CodeQL static analysis for vulnerability detection
+  - Dependency review for pull requests
+  - Security policy enforcement
 
 ### Development Container
 
@@ -99,6 +112,60 @@ Env vars are loaded by Vite in the following order
 3. **`.env.local`** - Always loaded useful for local secrets, never commit.
 4. **`.env`** - Base settings, lowest priority and always loaded. Can be committed.
 
+## Security
+
+This project implements comprehensive security measures to protect against vulnerabilities and ensure secure development practices.
+
+### Automated Security Monitoring
+
+#### Dependabot Configuration
+- **Daily Security Scans**: Automatically checks for security vulnerabilities in dependencies
+- **Priority Security Updates**: Security patches are prioritized over feature updates
+- **Comprehensive Coverage**: Monitors both direct and indirect (transitive) dependencies
+- **Automated PRs**: Creates pull requests for security updates with proper labeling
+- **GitHub Actions Updates**: Keeps CI/CD workflows secure and up-to-date
+
+#### Security Workflows
+- **Daily Security Audits**: Automated `npm audit` runs to detect vulnerabilities
+- **CodeQL Analysis**: Static code analysis for security vulnerabilities
+- **Dependency Review**: Reviews dependency changes in pull requests
+- **Vulnerability Thresholds**: Fails builds on high/critical vulnerabilities
+
+### Security Best Practices
+
+#### For Contributors
+1. **Keep Dependencies Updated**: Regularly review and approve Dependabot PRs
+2. **Run Security Audits**: Use `npm audit` before committing changes
+3. **Review Dependencies**: Only add necessary dependencies from trusted sources
+4. **Follow Secure Coding**: Use TypeScript for type safety and validate inputs
+5. **Test Security Changes**: Ensure security updates don't break functionality
+
+#### For Maintainers
+1. **Monitor Security Alerts**: Respond promptly to GitHub security advisories
+2. **Review Dependabot PRs**: Prioritize security updates over feature development
+3. **Update Security Policy**: Keep `.github/SECURITY.md` current with contact info
+4. **Configure Notifications**: Set up alerts for security-related issues
+
+### Security Commands
+
+```bash
+# Run security audit
+npm audit
+
+# Fix automatically fixable vulnerabilities
+npm audit fix
+
+# Check for high/critical vulnerabilities only
+npm audit --audit-level=high
+
+# Generate detailed audit report
+npm audit --json > security-report.json
+```
+
+### Reporting Security Issues
+
+Please refer to our [Security Policy](.github/SECURITY.md) for information on how to report security vulnerabilities responsibly.
+
 ## Available Scripts
 
 - `npm run dev` - Start development server with debug output
@@ -107,6 +174,9 @@ Env vars are loaded by Vite in the following order
 - `npm run lint` - Run ESLint
 - `npm run test` - Run tests once
 - `npm run test:watch` - Run tests in watch mode
+- `npm run security:audit` - Run security audit (moderate level)
+- `npm run security:fix` - Automatically fix security vulnerabilities
+- `npm run security:check` - Quick security check (high/critical only)
 
 ## VS Code Integration
 
