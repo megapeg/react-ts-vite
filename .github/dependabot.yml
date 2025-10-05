@@ -31,9 +31,9 @@ updates:
           - '*testing-library*'
     # Configure PR settings
     reviewers:
-      - '@megapeg'
+      - 'megapeg'
     assignees:
-      - '@megapeg'
+      - 'megapeg'
     labels:
       - 'dependencies'
       - 'automated'
