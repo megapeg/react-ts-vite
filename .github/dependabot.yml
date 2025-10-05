@@ -1,44 +1,44 @@
 version: 2
 updates:
   # Enable version updates for npm
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
     # Reduce PR limit from default 10 to 5 for better manageability
     open-pull-requests-limit: 5
     # Group dependency updates to reduce PR volume
     groups:
       production-dependencies:
         patterns:
-          - "*"
+          - '*'
         exclude-patterns:
-          - "@types/*"
-          - "*eslint*"
-          - "*prettier*"
-          - "*vite*"
-          - "*vitest*"
-          - "*testing-library*"
+          - '@types/*'
+          - '*eslint*'
+          - '*prettier*'
+          - '*vite*'
+          - '*vitest*'
+          - '*testing-library*'
       development-dependencies:
         patterns:
-          - "@types/*"
-          - "*eslint*"
-          - "*prettier*"
-          - "*vite*"
-          - "*vitest*"
-          - "*testing-library*"
+          - '@types/*'
+          - '*eslint*'
+          - '*prettier*'
+          - '*vite*'
+          - '*vitest*'
+          - '*testing-library*'
     # Configure PR settings
     reviewers:
-      - "maintainers"
+      - 'megapeg'
     assignees:
-      - "maintainers"
+      - 'megapeg'
     labels:
-      - "dependencies"
-      - "automated"
+      - 'dependencies'
+      - 'automated'
     # Commit message configuration
     commit-message:
-      prefix: "deps"
-      prefix-development: "deps-dev"
-      include: "scope"
+      prefix: 'deps'
+      prefix-development: 'deps-dev'
+      include: 'scope'
