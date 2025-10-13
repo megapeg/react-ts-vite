@@ -7,7 +7,7 @@ This template provides a minimal setup to get React working in Vite with HMR. Ad
 - Vitest and React Test Library for testing
 - Tailwind CSS v4 with shadcn/ui components and Radix UI
 - DevContainer for VS Code
-- GitHub Actions CI pipeline
+- GitHub Actions CI pipelines
 
 ## Install Precommit Hooks
 
