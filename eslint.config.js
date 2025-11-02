@@ -64,7 +64,7 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...vitest.environments.env.globals,
+        ...vitest.configs.env.globals,
       },
     },
     rules: {
