@@ -27,6 +27,6 @@ export default defineConfig({
       reporter: ['text', 'html', 'cobertura'],
       reportsDirectory: './coverage',
     },
-    css: false, // Disable CSS processing in tests as it is not needed and slow
+    css: true, // Only use CSS processing in tests if needed as can be slow
   },
 });
