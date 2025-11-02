@@ -61,6 +61,12 @@ export default [
       'testing-library': testingLibrary,
       vitest,
     },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...vitest.environments.env.globals,
+      },
+    },
     rules: {
       ...jestDom.configs.recommended.rules,
       ...testingLibrary.configs.react.rules,
