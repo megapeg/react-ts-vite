@@ -15,6 +15,7 @@ npm install && npx husky init && echo npx lint-staged > .husky/pre-commit
 
 # Install template dependencies
 
+> nvm use # from project directory to set correct node version
 > npm install
 > npm run dev
 
