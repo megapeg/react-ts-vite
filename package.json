@@ -1,8 +1,9 @@
 {
   "name": "react-ts-vite",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "type": "module",
+  "packageManager": "npm@10.8.2",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -67,8 +68,6 @@
     "node": "20.19.5"
   },
   "engines": {
-    "npm": ">=10.0.0",
-    "pnpm": "please-use-npm",
-    "yarn": "please-use-npm"
+    "npm": ">=10.0.0"
   }
 }
