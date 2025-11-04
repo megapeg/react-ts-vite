@@ -6,7 +6,14 @@ import { server } from '../mocks/server';
 // Add custom Jest-DOM matchers to Vitest's expect function
 expect.extend(matchers);
 
-beforeAll(() => server.listen());
+beforeAll(() => {
+  try {
+    server.listen({ onUnhandledRequest: 'error' });
+  } catch (error) {
+    console.error('Failed to start MSW server:', error);
+    throw error;
+  }
+});
 afterEach(() => {
   server.resetHandlers();
   cleanup();
